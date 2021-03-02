@@ -32,10 +32,10 @@ Product.create!([{
 },
 {
   title: "Boston Creame Donut",
-  description: "The Boston cream doughnut or donut is a round, solid, yeast-risen doughnut with chocolate frosting and a custard filling, resulting in a miniature doughnut version of the Boston cream pie.",
+  description: "The Boston cream doughnut or donut is a round, solid, yeast-risen doughnut with chocolate frosting and a custard filling, resulting in a miniature doughnut version of the Boston cream pie." 
   price: "3.49",
   image: Rails.root.join("app/assets/images/instrument3.png").open,
   user_id: user.id
-},
+}
 {
 }])
