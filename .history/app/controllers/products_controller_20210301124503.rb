@@ -1,10 +1,9 @@
-class ProductsController &lt; ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy ]
-  before_action :authenticate_user!, except [:index, :show]
+class ProductsController < ApplicationController
+  before_action :set_product, only: %i[ show edit update destroy ]
 
   # GET /products or /products.json
   def index
-    @products = Product.all.order("created_at desc")
+    @products = Product.all
   end
 
   # GET /products/1 or /products/1.json
@@ -13,7 +12,7 @@ class ProductsController &lt; ApplicationController
 
   # GET /products/new
   def new
-    @product = current_user.products.build
+    @product = Product.new
   end
 
   # GET /products/1/edit
@@ -22,14 +21,14 @@ class ProductsController &lt; ApplicationController
 
   # POST /products or /products.json
   def create
-    @product = current_user.products.build(product_params)
+    @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +41,7 @@ class ProductsController &lt; ApplicationController
         format.html { redirect_to @product, notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
