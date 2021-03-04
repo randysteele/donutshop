@@ -27,13 +27,13 @@ Product.create!([{
   name: "Jelly Filled Donut",
   description: "Glazed Donut Filled with Jelly",
   price: "2",
-  image: "app/assets/images/product2.png",
+  image: "app/assets/images/product2.png"
   user_id: user.id
 },
 {
   name: "Boston Creame Donut",
   description: "The Boston cream doughnut or donut is a round, solid, yeast-risen doughnut with chocolate frosting and a custard filling, resulting in a miniature doughnut version of the Boston cream pie.",
   price: "3",
-  image: "app/assets/images/product3.jpg",
+  image: "app/assets/images/product3.jpg"
   user_id: user.id
 }])

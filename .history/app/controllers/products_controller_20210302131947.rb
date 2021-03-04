@@ -1,4 +1,4 @@
-class ProductsController < Devise::ProductsController
+class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy ]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -60,7 +60,7 @@ class ProductsController < Devise::ProductsController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find_by(params[:id])
+      @product = Product.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

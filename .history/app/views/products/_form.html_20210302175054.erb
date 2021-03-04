@@ -1,7 +1,7 @@
 <div class="columns">
   <div class="column is-8 is-centered">
 
-    <%= simple_form_for @product, html: { multipart: true } do |f| %>
+    <%= simple_form_for @instrument, html: { multipart: true } do |f| %>
       <%= f.error_notification %>
 
         <div class="columns">
@@ -48,7 +48,7 @@
         <div class="field is-grouped">
           <div class="control">
             <%= f.button :submit, class: 'button is-warning' %>
-            <%= link_to 'Cancel', products_path, class:'button is-light' %>
+            <%= link_to 'Cancel', instruments_path, class:'button is-light' %>
           </div>
         </div>
 

@@ -18,22 +18,24 @@ user.save!
 
 Product.create!([{
   name: "Choclate Peanut Butter Brownies",
-  description: "Chewy, fudgy homemade chocolate brownies stuffed with a peanut butter filling and topped with peanut butter and chocolate chips. If you like peanut butter cups, you will love these!",
+  description: "Chewy, fudgy homemade chocolate brownies stuffed with a peanut butter filling and topped with peanut butter and chocolate chips. If you like peanut butter cups, you’ll love these!",
   price: "4",
-  image: "app/assets/images/product1.jpg",
+  image: Rails.root.join("app/assets/images/product1.jpg").open,
   user_id: user.id
 },
 {
   name: "Jelly Filled Donut",
   description: "Glazed Donut Filled with Jelly",
   price: "2",
-  image: "app/assets/images/product2.png",
+  image: Rails.root.join("app/assets/images/product2.png").open,
   user_id: user.id
 },
 {
   name: "Boston Creame Donut",
   description: "The Boston cream doughnut or donut is a round, solid, yeast-risen doughnut with chocolate frosting and a custard filling, resulting in a miniature doughnut version of the Boston cream pie.",
   price: "3",
-  image: "app/assets/images/product3.jpg",
+  image: Rails.root.join("app/assets/images/product3.jpg").open,
   user_id: user.id
+},
+{
 }])

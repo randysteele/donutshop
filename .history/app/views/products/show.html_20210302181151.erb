@@ -6,10 +6,6 @@
       <h1 class="name is-2"><%= @product.name %></h1>
 
 
-      <div class="feature-image">
-        <%= image_tag(@product.image) %>
-      </div>
-
       <div class="content pa4 mt3 bg-white border-radius-3">
 
       <h3 class="subtitle is-4">Description</h3>
@@ -24,6 +20,13 @@
       </div>
     </div>
   </div>
+<br><br>
+
+      <div class="feature-image">
+        <%= image_tag 'https://spicysouthernkitchen.com/wp-content/uploads/peanut-butter-brownies-9.jpg'  %>
+      </div>
+
+
 
   <% if product_author(@product) %>
     <%= link_to 'Edit', edit_product_path(@product), class: 'button' %>
