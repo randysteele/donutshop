@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   belongs_to :user, optional: true
   has_many :line_items
 
-  #mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
   serialize :image, JSON 
 
   validates :name, :description, :price, presence: true
